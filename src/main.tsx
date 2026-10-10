@@ -1,14 +1,7 @@
 ﻿import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-
-function App() {
-  return (
-    <main>
-      <h1>Hut4Devs</h1>
-      <p>Frontend workspace is ready.</p>
-    </main>
-  );
-}
+import { RouterProvider } from "react-router-dom";
+import { router } from "./app/router";
 
 const rootElement = document.getElementById("root");
 
@@ -18,6 +11,6 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>
 );
