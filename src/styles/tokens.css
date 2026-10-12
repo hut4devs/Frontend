@@ -1,0 +1,155 @@
+/* Single source of truth. Semantic assignments are proposals for design review. */
+:root {
+  --brand-ivory: #F7F1E7;
+  --brand-cream: #FFF9EE;
+  --brand-chocolate: #5A2D0C;
+  --brand-caramel: #C88D3A;
+  --brand-golden: #B77620;
+
+  --warm-raised: #FFFCF7;
+  --warm-subtle: #EFE3D1;
+  --warm-divider: #D8C4A9;
+  --warm-control: #8C6B4F;
+  --warm-secondary: #69452C;
+  --warm-muted: #765D49;
+  --warm-hover: #472208;
+  --warm-active: #351906;
+  --warm-accent-strong: #865313;
+  --sage-strong: #285C3B;
+  --sage-surface: #EDF5EA;
+  --amber-strong: #754B0B;
+  --amber-surface: #FFF2D6;
+  --red-strong: #9B3026;
+  --red-surface: #FFF0EB;
+  --blue-strong: #285975;
+  --blue-surface: #EDF4F7;
+
+  /* Warm Daylight is the only supported theme until dark values are approved. */
+  color-scheme: light;
+  --surface-canvas: var(--brand-ivory);
+  --surface-primary: var(--brand-cream);
+  --surface-secondary: var(--warm-subtle);
+  --surface-raised: var(--warm-raised);
+  --text-primary: var(--brand-chocolate);
+  --text-secondary: var(--warm-secondary);
+  --text-muted: var(--warm-muted);
+  --text-interactive: var(--brand-chocolate);
+  --text-interactive-hover: var(--warm-hover);
+  --text-interactive-active: var(--warm-active);
+  --action-primary: var(--brand-chocolate);
+  --action-primary-hover: var(--warm-hover);
+  --action-primary-active: var(--warm-active);
+  --action-primary-foreground: var(--brand-cream);
+  --action-secondary: var(--brand-cream);
+  --action-secondary-hover: var(--warm-subtle);
+  --action-secondary-active: var(--warm-divider);
+  --action-secondary-foreground: var(--brand-chocolate);
+  --accent-decorative: var(--brand-caramel);
+  --accent-decorative-strong: var(--brand-golden);
+  --accent-foreground: var(--warm-accent-strong);
+  --border-divider: var(--warm-divider);
+  --border-control: var(--warm-control);
+  --disabled-surface: var(--warm-subtle);
+  --disabled-foreground: var(--warm-muted);
+  --disabled-border: var(--warm-control);
+  --focus-outer: var(--brand-chocolate);
+  --focus-inner: var(--brand-cream);
+
+  --status-success-foreground: var(--sage-strong);
+  --status-success-surface: var(--sage-surface);
+  --status-success-border: var(--sage-strong);
+  --status-success-icon: var(--sage-strong);
+  --status-warning-foreground: var(--amber-strong);
+  --status-warning-surface: var(--amber-surface);
+  --status-warning-border: var(--amber-strong);
+  --status-warning-icon: var(--amber-strong);
+  --status-danger-foreground: var(--red-strong);
+  --status-danger-surface: var(--red-surface);
+  --status-danger-border: var(--red-strong);
+  --status-danger-icon: var(--red-strong);
+  --status-info-foreground: var(--blue-strong);
+  --status-info-surface: var(--blue-surface);
+  --status-info-border: var(--blue-strong);
+  --status-info-icon: var(--blue-strong);
+  --status-neutral-foreground: var(--warm-muted);
+  --status-neutral-surface: var(--warm-subtle);
+  --status-neutral-border: var(--warm-muted);
+  --status-neutral-icon: var(--warm-muted);
+
+  --border-width-default: 1px;
+  --border-width-emphasis: 2px;
+  --focus-width: 3px;
+  --focus-offset: 3px;
+}
+
+/* Keep Tailwind's rem-based spacing, breakpoints, containers and type scale. */
+@theme static {
+  --font-body: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  --text-caption: 0.875rem;
+  --text-caption--line-height: 1.5;
+  --text-label: 1rem;
+  --text-label--line-height: 1.5;
+  --text-label--font-weight: 600;
+  --leading-body: 1.5;
+  --leading-heading: 1.25;
+  --tracking-heading: -0.015em;
+  --radius-control: 0.5rem;
+  --radius-panel: 1rem;
+  --radius-pill: 999rem;
+  /* Flat surfaces until an elevation treatment is approved. */
+  --shadow-panel: none;
+}
+
+/* Aliases expose the source tokens as utilities without duplicating values. */
+@theme inline {
+  --color-*: initial;
+  --color-canvas: var(--surface-canvas);
+  --color-surface: var(--surface-primary);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-surface-raised: var(--surface-raised);
+  --color-foreground: var(--text-primary);
+  --color-foreground-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-interactive: var(--text-interactive);
+  --color-interactive-hover: var(--text-interactive-hover);
+  --color-interactive-active: var(--text-interactive-active);
+  --color-action-primary: var(--action-primary);
+  --color-action-primary-hover: var(--action-primary-hover);
+  --color-action-primary-active: var(--action-primary-active);
+  --color-on-primary: var(--action-primary-foreground);
+  --color-action-secondary: var(--action-secondary);
+  --color-action-secondary-hover: var(--action-secondary-hover);
+  --color-action-secondary-active: var(--action-secondary-active);
+  --color-on-secondary: var(--action-secondary-foreground);
+  --color-accent-decorative: var(--accent-decorative);
+  --color-accent-decorative-strong: var(--accent-decorative-strong);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-divider: var(--border-divider);
+  --color-control: var(--border-control);
+  --color-disabled-surface: var(--disabled-surface);
+  --color-disabled-foreground: var(--disabled-foreground);
+  --color-disabled-border: var(--disabled-border);
+  --color-focus-outer: var(--focus-outer);
+  --color-focus-inner: var(--focus-inner);
+  --color-success-foreground: var(--status-success-foreground);
+  --color-success-surface: var(--status-success-surface);
+  --color-success-border: var(--status-success-border);
+  --color-success-icon: var(--status-success-icon);
+  --color-warning-foreground: var(--status-warning-foreground);
+  --color-warning-surface: var(--status-warning-surface);
+  --color-warning-border: var(--status-warning-border);
+  --color-warning-icon: var(--status-warning-icon);
+  --color-danger-foreground: var(--status-danger-foreground);
+  --color-danger-surface: var(--status-danger-surface);
+  --color-danger-border: var(--status-danger-border);
+  --color-danger-icon: var(--status-danger-icon);
+  --color-info-foreground: var(--status-info-foreground);
+  --color-info-surface: var(--status-info-surface);
+  --color-info-border: var(--status-info-border);
+  --color-info-icon: var(--status-info-icon);
+  --color-neutral-foreground: var(--status-neutral-foreground);
+  --color-neutral-surface: var(--status-neutral-surface);
+  --color-neutral-border: var(--status-neutral-border);
+  --color-neutral-icon: var(--status-neutral-icon);
+}

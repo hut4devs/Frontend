@@ -44,3 +44,11 @@ docs/
 - Use focused changes and automated tests.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Design system
+
+Use the shared [Warm Daylight design tokens](docs/DESIGN_TOKENS.md) for semantic
+colors, typography, spacing, borders, focus indicators, and status styling.
+Project tokens live in `src/styles/tokens.css` and integrate with Tailwind CSS 4.
+The guide includes proposed design assignments, light-mode limitations,
+contributor examples, and unit/browser validation commands.
