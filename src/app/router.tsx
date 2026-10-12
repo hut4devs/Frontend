@@ -7,7 +7,7 @@
 
 export function AppShell() {
   return (
-    <div>
+    <div className="min-h-dvh p-4 sm:p-6">
       <header>
         <a href="/" aria-label="Hut4Devs home">Hut4Devs</a>
         <nav aria-label="Main navigation">
@@ -44,7 +44,11 @@ export function CapabilityPage({ title }: { title: string }) {
 }
 
 export function LoadingState() {
-  return <p role="status">Loading page</p>;
+  return (
+    <p role="status" className="status-message rounded-control border-neutral-border bg-neutral-surface p-3 text-neutral-foreground">
+      Loading page
+    </p>
+  );
 }
 
 export function RouteErrorPage() {
@@ -55,9 +59,9 @@ export function RouteErrorPage() {
     : "Something went wrong while loading this page.";
 
   return (
-    <section aria-labelledby="route-error-title">
+    <section aria-labelledby="route-error-title" className="p-4 sm:p-6">
       <h1 id="route-error-title">We couldn't load this page</h1>
-      <p role="alert">{message}</p>
+      <p role="alert" className="status-message rounded-control border-danger-border bg-danger-surface p-3 text-danger-foreground">{message}</p>
       <a href="/">Return home</a>
     </section>
   );
